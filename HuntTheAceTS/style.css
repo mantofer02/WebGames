@@ -35,6 +35,14 @@ main {
     'c d';
 }
 
+.card {
+  position: absolute;
+  height: var(--card-height);
+  width: var(--card-width);
+  perspective: 1000px;
+  cursor: pointer;
+}
+
 .card__pos-a {
   grid-area: a;
   border: 1px solid black;
@@ -56,14 +64,6 @@ main {
   grid-area: d;
   border: 1px solid black;
   background-color: pink;
-}
-
-.card {
-  position: absolute;
-  height: var(--card-height);
-  width: var(--card-width);
-  perspective: 1000px;
-  cursor: pointer;
 }
 
 .card__inner {
