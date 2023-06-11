@@ -2,8 +2,8 @@ import {
   CardObject,
   cardObjects,
   cardBackImgPath,
-  cardConainerElem,
-} from '@cardType';
+  cardContainerElem,
+} from './data/card';
 
 function createElement(elemType: string): HTMLElement {
   return document.createElement(elemType);
@@ -25,7 +25,31 @@ function addChildElement(parentElem: HTMLElement, childElem: HTMLElement) {
   parentElem.appendChild(childElem);
 }
 
-function createCart(cardItem: CardObject) {
+function mapCardIdToGridCell(card: HTMLElement): string {
+  if (card.id === '1') {
+    return '.card__pos-a';
+  } else if (card.id === '2') {
+    return '.card__pos-b';
+  } else if (card.id === '3') {
+    return '.card__pos-c';
+  } else if (card.id === '4') {
+    return '.card__pos-d';
+  } else {
+    return '';
+  }
+}
+
+function addCardToGridCell(card: HTMLElement) {
+  const cardPositionClassName = mapCardIdToGridCell(card);
+
+  const cardPosElem: HTMLElement = document.querySelector(
+    cardPositionClassName
+  );
+
+  addChildElement(cardPosElem, card as any);
+}
+
+function createCard(cardItem: CardObject) {
   const cardElem: HTMLElement = createElement('div');
   const cardInnerElem: HTMLElement = document.createElement('div');
   const cardFrontElem: HTMLElement = document.createElement('div');
@@ -53,4 +77,14 @@ function createCart(cardItem: CardObject) {
   addChildElement(cardInnerElem, cardFrontElem);
   addChildElement(cardInnerElem, cardBackElem);
   addChildElement(cardElem, cardInnerElem);
+
+  addCardToGridCell(cardElem);
 }
+
+function createCards() {
+  cardObjects.forEach((i) => {
+    createCard(i);
+  });
+}
+
+createCards();

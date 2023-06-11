@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
+    "target": "es5",
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "outDir": "scripts/",
     "paths": {
       "@cardType": ["./data/card"]
     }
-  }
+  },
+  "exclude": ["node_modules"]
 }

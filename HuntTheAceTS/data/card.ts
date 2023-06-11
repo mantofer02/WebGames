@@ -4,7 +4,7 @@ export interface CardObject {
 }
 
 export const cardBackImgPath: string = '../assets/images/back_of_card.svg';
-export const cardConainerElem: HTMLElement =
+export const cardContainerElem: HTMLElement =
   document.querySelector('.card-container');
 
 export const cardObjects: CardObject[] = [
