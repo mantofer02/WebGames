@@ -66,6 +66,15 @@ main {
   background-color: pink;
 }
 
+.card__pos-a,
+.card__pos-b,
+.card__pos-c,
+.card__pos-d {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .card__inner {
   position: relative;
   width: 100%;
@@ -92,6 +101,6 @@ main {
   transform: rotateY(180deg);
 }
 
-.card:hover .card__inner {
+/* .card:hover .card__inner {
   transform: rotateY(180deg);
-}
+} */
